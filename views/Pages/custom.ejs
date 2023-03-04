@@ -1,0 +1,39 @@
+<% layout('/layouts/boilerplate') -%>
+
+
+  <div class="container">
+
+
+    <div class="col-6 offset-3 text-center">
+      <h1>Choose a theme </h1>
+
+      <div class="col-6 offset-3">
+        <%- include('../partials/flash') %>
+    </div>
+
+            <div class="my-4">
+
+              <button id="dark-theme" class="btn btn-success ">Dark theme</button>
+              <button id="white-theme" class="btn btn-success ">White theme</button>
+
+            </div>
+            <div class="my-4">
+
+              <form class="d-inline" action="/mytasks/<%= currentUser.username %>/custom" method="POST" enctype="multipart/form-data">
+                <label for="background_image">Background image</label>
+                <input class="form-control mb-2" type="file" name="background_image" id="background_image" multiple>
+                <button class="btn btn-success">Use</button>
+
+              </form>
+              <form class="d-inline" action="/mytasks/<%= currentUser.username %>/custom?_method=DELETE" method="post">  
+                <button class="btn btn-danger">Remove</button>
+              </form>
+
+            </div>
+
+
+
+            <a class="btn btn-info" href="/mytasks/<%= currentUser.username %>">Back</a>
+
+    </div>
+  </div>

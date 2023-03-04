@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 w-100  ">
+    <div class="container-fluid">
+        <%if(currentUser){%>
+            <a class="navbar-brand" href="/mytasks/<%= currentUser.username %>">TODO.me</a>
+            <% }else{%>
+                <a class="navbar-brand">TODO.me</a>
+
+                <% } %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between " id="navbarNav">
+           
+            <div class="navbar-nav">
+              
+                
+              </div>
+            <div class="navbar-nav  ">
+
+                <% if(currentUser){ %>
+                <a class="nav-link" href="/myTasks/<%= currentUser.username %>/custom">Customize</a>
+                    <a class="nav-link" href="/logout">Logout</a>
+
+                    <% }else{ %>
+                        <a class="nav-link" href="/register">Register</a>
+                        <a class="nav-link" href="/login">Login</a>
+                        <% } %>
+
+
+            </div>
+        </div>
+    </div>
+</nav>
