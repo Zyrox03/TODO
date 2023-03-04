@@ -20,7 +20,10 @@ body{
 
 .UserName{
     color:var(--text-color);
+}
 
+.quote{
+    color:var(--text-color);
 
 }
 .oneTask{

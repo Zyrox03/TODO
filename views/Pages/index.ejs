@@ -1,16 +1,34 @@
-
 <% layout('/layouts/boilerplate') -%>
 
 
-    <div class="container">
-       
+    <div class="container mt-5">
+
 
         <div class="col-6 offset-3 text-center">
-            <h1>TO DO</h1>
+            <h1>My TODO APP</h1>
         </div>
-
+        <div class="col-12 my-5">
+            <div class="oneTask p-3 w-100 text-center rounded ">
+                <h1 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;"
+                    class="quote"> 
+                    <q>Subtracting from your list of priorities is as important as adding to it</q>
+                </h1>
+            </div>
+        </div>
         <div class="col-6 offset-3">
             <%- include('../partials/flash') %>
         </div>
-    </div>
 
+        <div class="col-6 offset-3 text-center">
+            <% if(currentUser){ %>
+                <a class="btn btn-info" href="/mytasks/<%= currentUser.username %>">GO to tasks</a>
+                <a class="btn btn-danger" href="/logout">Logout</a>
+
+                <% }else{ %>
+                    <a class="btn btn-info" href="/register">Register</a>
+                    <a class="btn btn-info" href="/login">Login</a>
+                    <% } %>
+        </div>
+
+        
+    </div>

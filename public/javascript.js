@@ -2,6 +2,7 @@
 
 const body = document.querySelector('body');
 const H1 = document.querySelector('h1');
+const H2 = document.querySelector('h2');
 const dark = document.querySelector('#dark-theme');
 const white = document.querySelector('#white-theme');
 
